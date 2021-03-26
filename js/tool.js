@@ -20,7 +20,7 @@ var nameBurger = document.getElementById('name');
 var ingredients = document.getElementsByClassName('ingredient-checkbox');
 // console.log(ingredients);
 var displayPrice = document.getElementById('price');
-
+var coupon = document.getElementById('coupon');
 
 
 /*
@@ -59,6 +59,13 @@ btn.addEventListener('click', function(){
         //3 stampare il prezzo
 
         displayPrice.innerHTML = price.toFixed(2);
+
+        //4 coupon 
+        /*
+        qui ovviamente andrebbe una chiamata a un db per prendere i codici
+        ma per oggi ci accontentiamo 
+        */
+        var couponCode = coupon.value;
 
 
     }
