@@ -49,6 +49,8 @@ btn.addEventListener('click', function(){
             //2 controllo sul check degli ingredienti
             if(ingredientCheck.checked){
                 //console.log(ingredientCheck.value);
+                console.log(typeof(ingredientCheck.value));
+                //price += ingredientCheck.value
             }
         }
         
