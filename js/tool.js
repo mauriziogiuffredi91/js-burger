@@ -22,6 +22,15 @@ var ingredients = document.getElementsByClassName('ingredient-checkbox');
 var displayPrice = document.getElementById('price');
 var coupon = document.getElementById('coupon');
 
+/*
+coupons statici
+*/
+var coupons = [
+    '14578HTYOPDH', 
+    '78902YHJLOPOL', 
+    '6723849TYUDGDHF', 
+    'TYRYRGFFG67'
+];
 
 /*
 Calc price
@@ -65,7 +74,12 @@ btn.addEventListener('click', function(){
         qui ovviamente andrebbe una chiamata a un db per prendere i codici
         ma per oggi ci accontentiamo 
         */
+        
         var couponCode = coupon.value;
+        if( coupons.includes(couponCode)) {
+            //20% di sconto
+            price -= price * 0.2;
+        }
 
 
     }
