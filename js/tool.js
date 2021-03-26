@@ -21,16 +21,17 @@ var ingredients = document.getElementsByClassName('ingredient-checkbox');
 // console.log(ingredients);
 var displayPrice = document.getElementById('price');
 var coupon = document.getElementById('coupon');
+var addBtn = document.getElementsByClassName('ingredient-add');
+//console.log(addBtn);
 
 /*
 coupons statici
 */
-var coupons = [
-    '14578HTYOPDH', 
-    '78902YHJLOPOL', 
-    '6723849TYUDGDHF', 
-    'TYRYRGFFG67'
-];
+var coupons = ['14578HTYOPDH', '78902YHJLOPOL', '6723849TYUDGDHF', 'TYRYRGFFG67'];
+     
+    
+     
+    
 
 /*
 Calc price
@@ -48,7 +49,7 @@ btn.addEventListener('click', function(){
         alert('Non hai inserito un nome per il tuo burger!');
 
     } else {
-        //1 questo è il prezzo base del panino
+        // questo è il prezzo base del panino
         var price = 50;
 
         for(var i = 0; i < ingredients.length; i ++){
@@ -56,7 +57,7 @@ btn.addEventListener('click', function(){
 
             //console.log(ingredientCheck);
 
-            //2 controllo sul check degli ingredienti
+            // controllo sul check degli ingredienti
             if(ingredientCheck.checked){
                 //console.log(ingredientCheck.value);
                 //console.log(typeof(ingredientCheck.value));
@@ -65,23 +66,43 @@ btn.addEventListener('click', function(){
         }
         console.log(price);
 
-        //3 stampare il prezzo
-
-        displayPrice.innerHTML = price.toFixed(2);
-
-        //4 coupon 
+        
+        // coupon 
         /*
         qui ovviamente andrebbe una chiamata a un db per prendere i codici
         ma per oggi ci accontentiamo 
         */
-        
-        var couponCode = coupon.value;
-        if( coupons.includes(couponCode)) {
-            //20% di sconto
-            price -= price * 0.2;
+       
+       var couponCode = coupon.value;
+       if( coupons.includes(couponCode)) {
+           //console.log('codice corretto');
+           //20% di sconto
+           price -= price * 0.2;
         }
-
-
+        
+        
     }
+    
+    // stampare il prezzo
 
+    displayPrice.innerHTML = price.toFixed(2);
 });
+
+/*
+pulsanti degli ingredienti cliccabili
+*/
+
+for (var i = 0; i < addBtn.length; i++){
+    var add = addBtn[i];
+
+
+    add.addEventListener('click', function(){
+        console.log('Click!');
+        console.log(this);
+        console.log(this.previousElementSibling);
+
+        var thisCheckbox = this.previousElementSibling;
+        thisCheckbox.checked = ! thisCheckbox.checked;
+    });
+
+}
