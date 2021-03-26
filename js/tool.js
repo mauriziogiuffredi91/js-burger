@@ -19,6 +19,7 @@ var btn = document.getElementById('button');
 var nameBurger = document.getElementById('name');
 var ingredients = document.getElementsByClassName('ingredient-checkbox');
 // console.log(ingredients);
+var displayPrice = document.getElementById('price');
 
 
 
@@ -49,11 +50,17 @@ btn.addEventListener('click', function(){
             //2 controllo sul check degli ingredienti
             if(ingredientCheck.checked){
                 //console.log(ingredientCheck.value);
-                console.log(typeof(ingredientCheck.value));
-                //price += ingredientCheck.value
+                //console.log(typeof(ingredientCheck.value));
+                price += parseInt(ingredientCheck.value);
             }
         }
-        
+        console.log(price);
+
+        //3 stampare il prezzo
+
+        displayPrice.innerHTML = price.toFixed(2);
+
+
     }
 
 });
