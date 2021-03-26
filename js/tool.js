@@ -17,8 +17,8 @@ Reference
 
 var btn = document.getElementById('button');
 var nameBurger = document.getElementById('name');
-
-
+var ingredients = document.getElementsByClassName('ingredient-checkbox');
+// console.log(ingredients);
 
 
 
@@ -29,16 +29,29 @@ Calc price
 btn.addEventListener('click', function(){
     //console.log('hello world');
     var name = nameBurger.value.trim();
-    //console.log(name); 
+    //console.log(name);  
 
     /*
     check sul nome
     */
-    if(name.length === 0){
+    if( name === null || name.length<1 ){
         alert('Non hai inserito un nome per il tuo burger!');
 
     } else {
-        console.log('Vai avanti');
+        //1 questo è il prezzo base del panino
+        var price = 50;
+
+        for(var i = 0; i < ingredients.length; i ++){
+            var ingredientCheck = ingredients[i];
+
+            //console.log(ingredientCheck);
+
+            //2 controllo sul check degli ingredienti
+            if(ingredientCheck.checked){
+                //console.log(ingredientCheck.value);
+            }
+        }
+        
     }
 
 });
