@@ -30,7 +30,7 @@ btn.addEventListener('click',
     function(){
         //console.log('hello world');
         var name = nameBurger.value.trim();
-        //console.log(name); 
+        console.log(name); 
 
         /*
         check sul nome
