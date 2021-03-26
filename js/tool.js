@@ -26,21 +26,19 @@ var nameBurger = document.getElementById('name');
 Calc price
 */
 
-btn.addEventListener('click',
-    function(){
-        //console.log('hello world');
-        var name = nameBurger.value.trim();
-        console.log(name); 
+btn.addEventListener('click', function(){
+    //console.log('hello world');
+    var name = nameBurger.value.trim();
+    //console.log(name); 
 
-        /*
-        check sul nome
-        */
-        if(name === null){
-            alert('Non hai inserito un nome per il tuo burger!');
+    /*
+    check sul nome
+    */
+    if(name.length === 0){
+        alert('Non hai inserito un nome per il tuo burger!');
 
-        } else {
-            console.log('Vai avanti');
-        }
-
+    } else {
+        console.log('Vai avanti');
     }
-);
+
+});
